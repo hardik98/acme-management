@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Iproduct } from '../product-list/products';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {tap ,catchError} from 'rxjs/operators';
+import {tap ,catchError, map} from 'rxjs/operators';
 import { JsonPipe } from '@angular/common';
 
 
@@ -27,6 +27,10 @@ export class ProductDataService {
     // )
   }
 
-
+  getProduct(id: number) {
+    return this.getProducts().pipe(
+      map((products) => products.find(p => p.productId === id))
+    );
+  }
   
 }

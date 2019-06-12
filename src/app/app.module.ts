@@ -24,7 +24,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     HttpClientModule,
     RouterModule.forRoot([
       {path:'products',component:ProductListComponent},
-      {path:'products/id', component:ProductDetailComponent},
+      {path:'products/:id', component:ProductDetailComponent},
       {path:'welcome',component:WelcomeComponent},
       {path:'',redirectTo:'wecome',pathMatch:'full'},
       {path:'**',redirectTo:'welcome'}
