@@ -27,12 +27,12 @@ filter By :     <input type="text" [(ngModel)]="ibox" /> {{ibox}}
       </div>
       <div class='row'
           *ngIf='listFilter' >
-        <div class='col-md-6' *ngIf="products && products.length">
+        <div class='col-md-6' *ngIf="product && product.length">
           <h4>Filtered by:  {{listFilter}}</h4>
         </div>
       </div>
       <div class='table-responsive'>
-        <table class='table' *ngIf="products && products.length">
+        <table class='table' *ngIf="product && product.length">
           <thead>
             <tr>
              <th><button (click)="isActive = !isActive" class="btn btn-primary">{{isActive ? 'Hide image':'Show image'}}</button></th>
